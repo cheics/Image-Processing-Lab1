@@ -1,6 +1,8 @@
 \documentclass[article, 1.5space, letterpaper, 12pt, oneside, header, footer]{SydeClass}
 \graphicspath{{images/}}
 \usepackage{subfigure}
+\usepackage{eqnarray}
+
 
 % --------- Title Info -----------
 \titlestyle{design} % used in SydeTitle.tex. Can equal one of the following values: design, work
@@ -23,6 +25,8 @@
 \setcounter{secnumdepth}{2}
 \setcounter{tocdepth}{1}
 
+\input{matlabFormating}
+
 % ############  ############
 \begin{document}
 
@@ -38,6 +42,17 @@
 
 \section{Image quality measures}
 
+During the lab, some operations will be applied to a modified image in order to imporve it's appearance. In order to evaluate the quality of the operation, a measure known as the ``Peak Signal to Noise Ratio'' (PSNR) is used, calculated as illustrated in \eqref{eqn-psnr}.
+
+\begin{eqnarray}
+\label{eqn-psnr}
+PSNR & = & 10 \log_{10}\left ( \frac{{\textup{MAX}_f}^{2}}{\textup{MSE}} \right ) \\
+\textup{MSE} & = &\frac{1}{mn} \sum_{i=0}^{m-1}\sum_{j=0}^{n-1} \left \| f(i,j) - g(i,j) \right \|^2
+\end{eqnarray}
+
+The Matlab code used to calculate the PSNR for this lab is attached in Appendix~\ref{code-PSNR}.
+
+
 \section{Digital zooming}
 
 \section{Discrete convolution for image proccessing}
@@ -45,6 +60,14 @@
 \section{Fourier analyisis}
 
 \section{Point operations}
+
+\appendix
+\newpage
+
+\section{Matlab Code}
+\subsection{PSNR}
+\label{code-PSNR}
+\lstinputlisting[language=Matlab]{"matlabFiles/PSNR.m"}
 
 
 % -------- Bibliography --------
