@@ -153,6 +153,30 @@ The images with higher PSNR generally look subjectively better. THe exception fo
 
 \section{Discrete convolution for image proccessing}
 
+
+
+\begin{figure}[ht]
+\centering
+	\subfigure[Original image]{
+	\includegraphics[width=0.45\linewidth]{discreteConvolution/lenaBase}
+	}
+	\subfigure[(0.16, 0.16, 0.16, 0.16, 0.16, 0.16) kernel]{
+	%\caption{Convolved with $\left [ 0.16, 0.16, 0.16, 0.16, 0.16, 0.16\right ]$}
+	\includegraphics[width=0.45\linewidth]{discreteConvolution/lena_h1}
+	}
+	\subfigure[(0.16, 0.16, 0.16, 0.16, 0.16, 0.16)$^T$ kernel]{
+	%\caption{Convolved with $\left [0.16, 0.16, 0.16, 0.16, 0.16, 0.16\right ]^\textup{T}$}
+	\includegraphics[width=0.45\linewidth]{discreteConvolution/lena_h2}
+	}
+	\subfigure[(1, -1) kernel]{
+	\includegraphics[width=0.45\linewidth]{discreteConvolution/lena_h3}
+	}
+	\caption{The Lena test image convolved with various kernels.}
+	\label{fig:discreteConvolution.lena}
+\end{figure}
+
+
+
 \section{Fourier analyisis}
 
 \section{Point operations}
