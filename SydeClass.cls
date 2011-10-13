@@ -175,7 +175,7 @@
 %\setcounter{tocdepth}{1}
 
 %\renewcommand\bibname{References}
-\bibliographystyle{IEEEtr}
+\bibliographystyle{plain}
 
 % ---------------------------------------- Custom Commands -----------------------------------------
 % Text
