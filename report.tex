@@ -95,11 +95,9 @@ Digital zooming techniques can introduce artifacts into an image. In order to ev
 	\label{fig:digitalZoom.cameraman}
 \end{figure}
 
-
-
 Note that since Matlab already has image resizing functions providing the various digital zooming techniques compared, and the lab instructions have not explicitly asked for a implementation, the Matlab function \texttt{imresize} is used.
 
-\clearpage
+
 
 \subsection{Discussion questions}
 
@@ -120,37 +118,34 @@ As higher order digital zooming methods are used, the PSNR increases. Informatio
 \subsubsection{What parts of the image seems to work well using these digital zooming methods? What parts of the
 image doesn't? Why?}
 
-Solid colour areas look the same across all methods
+In large solid colour areas, all of the digital zooming methods perform equally. Lena's right shoulder is an area containing low frequency detail that looks very similar among all methods.
 
-Low freq gradations look better using bilinear (background of lena, shading on lena's hat)
+Low frequency gradations in the images look better using bilinear and bicubic, as interpolation allows for smooth transition between pixels. This is visible in the shading on Lena's face and the background of the Cameraman photo.
 
-Edges loose the staircase effect using bilinear, slight reduction in edge contrast in camerman (due to interpolation)
+Image edges loose the staircase effect due to interpolation reducing edge aliasing. The edges of the photographer in the Cameraman photo look much better in the bilinear and bicubic photos.
 
-3rd order, high frequency detail is visible in Lena's feathers, high frequency looks better with NN feathers than BL
 
-Cameraman looks awful using NN, smaller image means that the term low freq encapsulates  MANY MORE DETAILS
+High frequency details, such as Lena's eyes and the feathers in Lena's hat, look better in the bicubic and nearest neighbor digital zooms. The bilinear approach oversmooths the features of the images, and the detail contrast is reduced. The higher order interpolation is able to better interpolate the high frequency data and represent the eyes and feathers accurately.
 
-\subsubsection{Comparing zooming results for Lena and Cameraman}
-4. Compare the zooming results between Lena and Cameraman. Which image results in higher PSNR?
 
-Lena has higher PSNR acorss the board, since the image is bigger, not as much data is lost 
+\subsubsection{Compare the zooming results between Lena and Cameraman. Which image results in higher PSNR? Why?}
 
-Which image looks better when restored to the original resolution using digital zooming methods?
+The digital zooms of Lena have higher PSNR for all digital zooming methods. This is because the Lena image has less high frequency components than the Cameraman image. Since all interpolation methods work more poorly with the high frequency areas of the image, an image that is composed of more high frequency components will look worse than one with fewer when zoomed using interpolation.
 
-Lena; more pixels in original image gives more information to interpolating methods
-Why?
 
-Orginal 512 vs 256
+\subsubsection{Which image looks better when restored to the original resolution using digital zooming methods?}
+
+Subjectively (and objectively according the to the PSNR measure), the Lena image looks closer to the original when zoomed using all digital zooming methods.
+
 
 \subsubsection{What does the PSNR tell you about each of the methods? Does it reflect what is observed visually?}
 
-What does the PSNR tell you about each of the methods?
-PSNR quantifies the error in the image from the ground truth image. It illustrates that in the images chosen 
+Since PSNR quantifies the error in the image from the ground truth image, it illustrates that the two images compared using the PSNR measure are similar in intensity at the same points.
 
-Does it reflect what is observed visually?
+The images with higher PSNR generally look subjectively better. The exception is that the nearest neighbor Lena image looks better than bilinear Lena due to the bluriness induce by the bilinear interpolation. There exist other more complicated methods such as the Structural Similarity Method \cite{ssim-image-qual} and the Universal Image Quality Assesment Method \cite{universal-image-qual} (among many others) which may come to the same conclusion that I did about the images, as PSNR does not take into account the psychovisual model of human vision.
 
-The images with higher PSNR generally look subjectively better. THe exception for me is that the NN lena looks better than BL Lena due to sharpness (IMO). There exist other more complicated methods such as the Structural Similarity Method \cite{ssim-image-qual} and the Universal Image Quality Assesment Method \cite{universal-image-qual} (among many others) which may come to the same conclusion that I did about the images.
 
+\clearpage
 \section{Discrete convolution for image proccessing}
 
 
