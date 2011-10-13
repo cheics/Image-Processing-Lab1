@@ -181,6 +181,64 @@ The images with higher PSNR generally look subjectively better. THe exception fo
 
 \section{Point operations}
 
+\subsection{Image histogram}
+
+\begin{figure}[ht]
+\centering
+	\subfigure[Original image]{
+	\includegraphics[width=0.45\linewidth]{pointOperations/tireBase}
+	}
+	\subfigure[Original image histogram]{
+	\includegraphics[width=0.45\linewidth]{pointOperations/tireBase_hist}
+	}
+\end{figure}
+
+\subsection{Negative image histogram}
+
+\begin{figure}[ht]
+\centering
+	\subfigure[Negative image]{
+	\includegraphics[width=0.45\linewidth]{pointOperations/tireNeg}
+	}
+	\subfigure[Negative image histogram]{
+	\includegraphics[width=0.45\linewidth]{pointOperations/tireNeg_hist}
+	}
+\end{figure}
+
+
+\subsection{Power-law transformations}
+
+\begin{figure}[ht]
+\centering
+	\subfigure[Gray-level expansion with $\gamma = 0.5$]{
+	\includegraphics[width=0.45\linewidth]{pointOperations/tire_0_5}
+	}
+	\subfigure[Gray-level expansion histogram with $\gamma = 0.5$]{
+	\includegraphics[width=0.45\linewidth]{pointOperations/tire_0_5_hist}
+	}
+	\subfigure[Gray-level compression with $\gamma = 1.3$]{
+	\includegraphics[width=0.45\linewidth]{pointOperations/tire_1_3}
+	}
+	\subfigure[Gray-level compression histogram with $\gamma = 1.3$]{
+	\includegraphics[width=0.45\linewidth]{pointOperations/tire_1_3_hist}
+	}
+\end{figure}
+
+
+\subsection{Histogram equalization}
+
+
+\begin{figure}[ht]
+\centering
+	\subfigure[Histogram equalized image]{
+	\includegraphics[width=0.45\linewidth]{pointOperations/tire_eq}
+	}
+	\subfigure[Histogram equalized image histogram]{
+	\includegraphics[width=0.45\linewidth]{pointOperations/tire_eq_hist}
+	}
+\end{figure}
+
+
 \appendix
 \newpage
 
