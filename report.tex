@@ -55,6 +55,54 @@ The Matlab code used to calculate the PSNR for this lab is attached in Appendix~
 
 \section{Digital zooming}
 
+Digital zooming techniques can introduce artifacts into an image. In order to evaluate several digital zooming techniques, two different sample images will be douwn scaled by a factor of 4, then enlarged using one of three digital zooming techniques. The resulting images will be compared to the ground truth using PSNR, and are included in Figures~\ref{fig:digitalZoom.lena}~and~\ref{fig:digitalZoom.cameraman}.
+
+
+\begin{figure}[ht]
+\centering
+	\subfigure[Original image, PSNR $= \infty$]{
+	\includegraphics[width=0.45\linewidth]{digitalZoom/lenaBase}
+	}
+	\subfigure[Nearest Neighbor, PSNR = +33.96 dB]{
+	\includegraphics[width=0.45\linewidth]{digitalZoom/lena_NN}
+	}
+	\subfigure[Bilinear Interpolation, PSNR = +34.26 dB]{
+	\includegraphics[width=0.45\linewidth]{digitalZoom/lena_BL}
+	}
+	\subfigure[Bicubic Interpolation, PSNR = +34.70 dB]{
+	\includegraphics[width=0.45\linewidth]{digitalZoom/lena_BC}
+	}
+	\caption{Various methods of digitally zooming the Lena test image.}
+	\label{fig:digitalZoom.lena}
+\end{figure}
+
+\begin{figure}[ht]
+
+\centering
+	\subfigure[Original image, PSNR $= \infty$]{
+	\includegraphics[width=0.45\linewidth]{digitalZoom/cameramanBase}
+	}
+	\subfigure[Nearest Neighbor, PSNR = +32.91 dB]{
+	\includegraphics[width=0.45\linewidth]{digitalZoom/cameraman_NN}
+	}
+	\subfigure[Bilinear Interpolation, PSNR = +32.62 dB]{
+	\includegraphics[width=0.45\linewidth]{digitalZoom/cameraman_BL}
+	}
+	\subfigure[Bicubic Interpolation, PSNR = +32.88 dB]{
+	\includegraphics[width=0.45\linewidth]{digitalZoom/cameraman_BC}
+	}
+	\caption{Various methods of digitally zooming the Cameraman test image.}
+	\label{fig:digitalZoom.cameraman}
+\end{figure}
+
+
+
+Note that since Matlab already has image resizing functions providing the various digital zooming techniques compared, and the lab instructions have not explicitly asked for a implementation, the Matlab function \texttt{imresize} is used.
+
+\clearpage
+
+\subsection{Discussion questions}
+
 \section{Discrete convolution for image proccessing}
 
 \section{Fourier analyisis}
