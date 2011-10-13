@@ -103,6 +103,54 @@ Note that since Matlab already has image resizing functions providing the variou
 
 \subsection{Discussion questions}
 
+\subsubsection{What can you observed about the up-sampled images produced by each of the methods?}
+
+Taking a look at the upsampled images in Figures~\ref{fig:digitalZoom.lena}~and~\ref{fig:digitalZoom.cameraman} we can qualitatively observe that the images look different.
+
+The \emph{Nearest Neighbor} digital zooming approach has a blocky look (zooming the PDF or viewing a hardcopy is nessecary due to the limited PPI of LCD displays). This gives a blocky look to the image, as the algorithim is replacing each 1 pixel in the reduced size image with 16 of the same colour.
+
+The \emph{Bilinear Interpolation} digital zooming approach has a blurred appearance. Bilinear interpolation interpolates using a quadratic polynomial (2 linear loopups); which smooths out the transitions between pixels. In low frequency detail regions, the transition looses the blocky look of the nearest neighbor zooming technique, but in high frequency areas the image loops blurry.
+
+The \emph{Bicubic Interpolation} digital zooming approach has the best subjective appearance. Bicubic interpolation uses 16 pixels in order to derive the polynomial to lookup the new pixel values. Using a higher order polynomial allows detail to be better preserved in high frequency detail areas.
+
+\subsubsection{How do the different methods compare to each other in terms of PSNR as well as visual quality? Why?}
+
+As higher order digital zooming methods are used, the PSNR increases. Information is lost when the image is downsampled by a factor of 4 using the 1st order image resizing method. The higher order up-sampling methods are better at reconstructing high frequency detail from the downsampled image and therefore appear less fuzzy than the lower order methods. The higher order methods are also better at preserving edge contrast, which increases the percieved sharpness of the image; therefore the image looks ``better''.
+
+\subsubsection{What parts of the image seems to work well using these digital zooming methods? What parts of the
+image doesn't? Why?}
+
+Solid colour areas look the same across all methods
+
+Low freq gradations look better using bilinear (background of lena, shading on lena's hat)
+
+Edges loose the staircase effect using bilinear, slight reduction in edge contrast in camerman (due to interpolation)
+
+3rd order, high frequency detail is visible in Lena's feathers, high frequency looks better with NN feathers than BL
+
+Cameraman looks awful using NN, smaller image means that the term low freq encapsulates  MANY MORE DETAILS
+
+\subsubsection{Comparing zooming results for Lena and Cameraman}
+4. Compare the zooming results between Lena and Cameraman. Which image results in higher PSNR?
+
+Lena has higher PSNR acorss the board, since the image is bigger, not as much data is lost 
+
+Which image looks better when restored to the original resolution using digital zooming methods?
+
+Lena; more pixels in original image gives more information to interpolating methods
+Why?
+
+Orginal 512 vs 256
+
+\subsubsection{What does the PSNR tell you about each of the methods? Does it reflect what is observed visually?}
+
+What does the PSNR tell you about each of the methods?
+PSNR quantifies the error in the image from the ground truth image. It illustrates that in the images chosen 
+
+Does it reflect what is observed visually?
+
+The images with higher PSNR generally look subjectively better. THe exception for me is that the NN lena looks better than BL Lena due to sharpness (IMO). There exist other more complicated methods such as the Structural Similarity Method \cite{ssim-image-qual} and the Universal Image Quality Assesment Method \cite{universal-image-qual} (among many others) which may come to the same conclusion that I did about the images.
+
 \section{Discrete convolution for image proccessing}
 
 \section{Fourier analyisis}
@@ -120,6 +168,6 @@ Note that since Matlab already has image resizing functions providing the variou
 
 % -------- Bibliography --------
 %\addcontentsline{toc}{chapter}{\hspace{13pt} References}
-%\bibliography{report}
+\bibliography{refs}
 
 \end{document}  
