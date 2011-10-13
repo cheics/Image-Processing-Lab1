@@ -1,0 +1,35 @@
+% eqnarray environment
+% Paul Taylor, 11 June 2003
+
+% By default, LaTeX's eqnarray environment has three columns (left, centre,
+% right) and adds an equation number on the right against the margin. The
+% following modified form of it is compatible, but if there is a fourth
+% column it is set in text mode in place of the equation.
+
+\def\eqnarray{$$\global\@eqnswtrue\global\@eqcnt\z@\let\\=\@eqncr
+\tabskip\@centering
+\WillHandleQED
+\halign to \linewidth\bgroup
+   \@eqnsel$\displaystyle\tabskip\z@{##}$\hskip\@centering&%
+   \global\@eqcnt\@ne\hskip2\arraycolsep \hfil${##}$\hfil&%
+   \global\@eqcnt\tw@\hskip2\arraycolsep
+        $\displaystyle\tabskip\z@{##}$\hfil\tabskip\@centering&%
+   \global\@eqcnt\thr@@\hbox to\z@\bgroup\hss##\tabskip\z@\cr}
+
+\def\@@eqncr{%
+\let\@tempa\relax
+\ifcase\@eqcnt
+        \def\@tempa{& & &}%
+\or     \def\@tempa{& &}%
+\or     \def\@tempa{&}%
+\else   \@eqnswfalse
+\fi 
+\@tempa
+\if@eqnsw
+        \@eqnnum\stepcounter{equation}%
+\fi
+\HandleQED
+\egroup % matches \bgroup in fourth cell of preamble
+\global\@eqnswtrue
+\global\@eqcnt\z@
+\cr}
