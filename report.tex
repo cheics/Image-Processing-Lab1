@@ -195,10 +195,10 @@ Convolution can perform operations on an image to extract various spatial compon
 	\subfigure[Spectra of rotated rectangle]{
 	\includegraphics[width=0.45\linewidth]{fourierSpectra/rectangleSpectra45}
 	}
-	\subfigure[Magnitude Lena Image]{
+	\subfigure[{\bf Log} of the magnitude component of the Lena image]{
 	\includegraphics[width=0.45\linewidth]{fourierSpectra/lenamag}
 	}
-	\subfigure[Phase Lena Image (Log of Phase)]{
+	\subfigure[Phase component of the Lena image]{
 	\includegraphics[width=0.45\linewidth]{fourierSpectra/lenaphase}
 	}
 	\caption{The resulting images for the Fourier Spectra sections}
@@ -223,11 +223,11 @@ One can conclude that the fourier spectra of an image will reflect any spatial t
 
 
 \subsubsection{Describe how the reconstructed image from the amplitude component look like? What image characteristics does the amplitude component capture}
-Not much useful information can be gained from a visual inspection of the amplitude component. It appears to be a gray haze. In terms of image characteristics, the amplitude component captures the DC component.
+Not much useful information can be gained from a visual inspection of the amplitude component. The image is devoid of any detail and resembles a cloudy grey haze. In terms of image characteristics, the magnitude component of the image captures the DC component of the image.
 
 
 \subsubsection{Describe how the reconstructed image from the phase component look like? What image characteristics does the phase component capture}
-The phase image looks similar to an edge map of the original Lena image. The phase contains the strutural information of the image
+The phase component image looks similar to an edge map of the original Lena image. The phase contains the strutural information of the image, and contains the high frequency information of the image.
 
 
 \section{Point operations}
