@@ -36,10 +36,6 @@
 % ############ Chapters ############
 \pagenumbering{arabic}
 
-\section{Introduction}
-
-
-
 \section{Image quality measures}
 
 During the lab, some operations will be applied to a modified image in order to improve it's appearance. In order to evaluate the quality of the operation, a measure known as the ``Peak Signal to Noise Ratio'' (PSNR) is used, calculated as illustrated in \eqref{eqn-psnr}.
@@ -142,7 +138,7 @@ Subjectively (and objectively according the to the PSNR measure), the Lena image
 
 Since PSNR quantifies the error in the image from the ground truth image, it illustrates that the two images compared using the PSNR measure are similar in intensity at the same points.
 
-The images with higher PSNR generally look subjectively better. The exception is that the nearest neighbour Lena image looks better than bilinear Lena due to the blurriness induce by the bilinear interpolation. There exist other more complicated methods such as the Structural Similarity Method \cite{ssim-image-qual} and the Universal Image Quality Assessment Method \cite{universal-image-qual} (among many others) which may come to the same conclusion that I did about the images, as PSNR does not take into account the psycho-visual model of human vision.
+The images with higher PSNR generally look subjectively better. The exception is that the nearest neighbour Lena image looks better than bilinear Lena due to the blurriness induce by the bilinear interpolation. There exist other more complicated methods such as the Structural Similarity Method \cite{ssim-image-qual} and the Universal Image Quality Assessment Method \cite{universal-image-qual} (among many others) which may objectively come to the same conclusions as I did about the quality of the images, as PSNR does not take into account the psycho-visual model of human vision.
 
 
 \clearpage
@@ -213,10 +209,10 @@ Convolution can perform operations on an image to extract various spatial compon
 \subsection{Discussion Questions}
 
 \subsubsection{What can you say about the general distribution of energy in the Fourier spectra? Why?}
-The distrubution of energy is mostly in the center (i.e. mostly low frequency) in the form of a sinc function. This is because in a plain rectangle, there is mostly course detail.
+The distrubution of energy is located solely in the centre of the image (i.e. mostly low frequency) in the form of a sinc function. This is because in a simple rectangle, there is mostly coarse detail. The rectangle can be approximated by a number of sine waves, decreasing in amplitude as frequency increases in order to refine the edge of the rectangle.
 
-\subsubsection{ What characteristics about the test image can you infer from the Fourier spectra}
-From the spectra, one can infer that the image does not have much in the way of fine details.
+\subsubsection{What characteristics about the test image can you infer from the Fourier spectra?}
+Observing the Fourier spectra, one can infer that the image does not have much in the way of fine details.
 
 \subsubsection{How did the Fourier spectra change from the original image (before rotation)}
 The Fourier spectra also rotated 45 degrees.
