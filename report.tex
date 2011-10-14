@@ -179,6 +179,48 @@ The images with higher PSNR generally look subjectively better. THe exception fo
 
 \section{Fourier analyisis}
 
+\begin{figure}[ht]
+\centering
+	\subfigure[Spectra of rectangle]{
+	\includegraphics[width=0.45\linewidth]{fourierSpectra/rectangleSpectra}
+	}
+	\subfigure[Spectra of rotated rectangle]{
+	\includegraphics[width=0.45\linewidth]{fourierSpectra/rectangleSpectra45}
+	}
+	\subfigure[Magnitude Lena Image]{
+	\includegraphics[width=0.45\linewidth]{fourierSpectra/lenamag}
+	}
+	\subfigure[Phase Lena Image]{
+	\includegraphics[width=0.45\linewidth]{fourierSpectra/lenaphase}
+	}
+	\caption{The resulting images for the Fourier Spectra sections}
+	\label{fig:fourierSpectra.lena}
+\end{figure}
+
+
+\subsection{Discussion Questions}
+
+\subsubsection{What can you say about the general distribution of energy in the Fourier spectra? Why?}
+The distrubution of energy is mostly in the center (i.e. mostly low frequency) in the form of a sinc function. This is because in a plain rectangle, there is mostly course detail.
+
+\subsubsection{ What characteristics about the test image can you infer from the Fourier spectra}
+From the spectra, one can infer that the image does not have much in the way of fine details.
+
+\subsubsection{How did the Fourier spectra change from the original image (before rotation)}
+The Fourier spectra also rotated 45 degrees.
+
+\subsubsection{ What conclusions and observations can be made about image characteristics based on the Fourier
+spectra of both original image and the rotated image}
+
+
+\subsubsection{Describe how the reconstructed image from the amplitude component look like? What image characteristics does the amplitude component capture}
+
+
+
+\subsubsection{Describe how the reconstructed image from the phase component look like? What image characteristics does the phase component capture}
+The phase image looks similar to an edge map of the original Lena image. The phase contains the strutural information of the image
+
+
 \section{Point operations}
 
 \subsection{Image histogram}
