@@ -212,10 +212,10 @@ Convolution can perform operations on an image to extract various spatial compon
 The distrubution of energy is located solely in the centre of the image (i.e. mostly low frequency) in the form of a sinc function. This is because in a simple rectangle, there is mostly coarse detail. The rectangle can be approximated by a number of sine waves, decreasing in amplitude as frequency increases in order to refine the edge of the rectangle.
 
 \subsubsection{What characteristics about the test image can you infer from the Fourier spectra?}
-Observing the Fourier spectra, one can infer that the image does not have much in the way of fine details.
+The Fourier spectra are concentrated in the centre of the image. Since the spectra are concentrated in the centre, one can infer that the image does not have a high frequency component, and corespondingly, does not have fine details in the image.
 
 \subsubsection{How did the Fourier spectra change from the original image (before rotation)}
-The Fourier spectra also rotated 45 degrees.
+The original image Fourier spectra are represented as a horizontal sinc function 90 degrees to the vetical rectangle in the image. When the original image is rotated 45 degrees, the horizontal spectra components that made up the original image spectra became a combinatoin of vertical and horizontal spectra. When the image was rotated, the frequency components of the image also rotated; therefore the spectra is a rotated version of the original image spectra.
 
 \subsubsection{ What conclusions and observations can be made about image characteristics based on the Fourier
 spectra of both original image and the rotated image}
